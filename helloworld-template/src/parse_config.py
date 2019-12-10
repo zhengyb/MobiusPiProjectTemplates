@@ -2,13 +2,15 @@
 
 import yaml
 
+
 class Config:
     def __init__(self):
-        self.others = dict() 
+        self.others = dict()
 
     def has_option(self, section, option):
         state = False
-        if self.others and section in self.others and option in self.others[section]:
+        if self.others and section in self.others and option in self.others[
+                section]:
             state = True
         return state
 
@@ -28,6 +30,6 @@ class Config:
 
 
 if __name__ == '__main__':
-    filename="./config.yaml"
+    filename = "./config.yaml"
     config_instance = Config()
-    config_instance.parse_yaml_config(filename)  
+    config_instance.parse_yaml_config(filename)
